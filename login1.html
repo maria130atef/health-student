@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        header {
+background-color: white;
+            color: white;
+            text-align: center;
+            width: 100%;
+/*            padding: 20px;
+
+*/        }
+    </style>
+</head>
+<body>
+    <header>
+        <img  src="assets/img/portfolio/books.jpg" >
+    </header>
+<div class="container">
+    <h2>Login</h2>
+    <form id="loginForm" onsubmit="return validateLogin()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" value="Login">
+    </form>
+</div>
+
+<script>
+    function validateLogin() {
+        // Get username and password values from the form
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        // Check if username and password match the expected values
+        if (username === 'userNurse' && password === '123') {
+            window.location.href = 'select2.html';
+            return false; // Prevent form submission
+        } else {
+            alert('Invalid username or password.');
+            return false; // Prevent form submission
+        }
+    }
+</script>
+
+</body>
+</html>
